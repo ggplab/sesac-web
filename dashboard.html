@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>양천구 20평대, 8억으로 어디까지 가능한가</title>
+<style>
+  @font-face {
+    font-family: "Pretendard";
+    src: url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/woff2/PretendardVariable.woff2") format("woff2-variations");
+    font-weight: 400 700;
+  }
+
+  /* ---- Montage(@wanteddev/wds-theme) design tokens ---- */
+  :root {
+    --blue-40: #0054D1;
+    --blue-45: #005EEB;
+    --blue-50: #0066FF;
+    --blue-90: #C9DEFE;
+    --blue-95: #EAF2FE;
+
+    --cn-10: #171719;
+    --cn-25: #37383C;
+    --cn-50: #70737C;
+    --cn-70: #989BA2;
+    --cn-90: #C2C4C8;
+    --cn-95: #DBDCDF;
+    --cn-97: #EAEBEC;
+    --cn-99: #F7F7F8;
+
+    --common-0: #000000;
+    --common-100: #ffffff;
+
+    --red-50: #FF4242;
+    --red-95: #FFEBEB;
+    --green-50: #00BF40;
+    --green-95: #E6FAEC;
+
+    --color-primary-normal: var(--blue-50);
+    --color-primary-strong: var(--blue-45);
+    --color-label-normal: var(--cn-10);
+    --color-label-neutral: #4b4c50;
+    --color-label-alternative: #7d7e84;
+    --color-bg-normal: var(--common-100);
+    --color-bg-alternative: var(--cn-99);
+    --color-line-normal: var(--cn-95);
+    --color-line-alternative: var(--cn-97);
+
+    --sp-8: 8px;
+    --sp-12: 12px;
+    --sp-16: 16px;
+    --sp-24: 24px;
+    --sp-32: 32px;
+    --sp-48: 48px;
+    --sp-64: 64px;
+
+    --radius: 12px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { max-width: 100%; overflow-x: hidden; }
+
+  body {
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 var(--sp-24) var(--sp-64);
+    color: var(--color-label-normal);
+    background: var(--color-bg-normal);
+    line-height: 1.6;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  header.page-header {
+    padding: var(--sp-48) 0 var(--sp-24);
+  }
+
+  h1 {
+    font-size: 2rem;       /* title1 */
+    line-height: 2.75rem;
+    letter-spacing: -0.0253em;
+    font-weight: 700;
+    margin: 0 0 var(--sp-8);
+  }
+
+  .sub {
+    font-size: 1rem;
+    color: var(--color-label-alternative);
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 1.375rem;   /* heading1 */
+    line-height: 1.875rem;
+    letter-spacing: -0.0194em;
+    font-weight: 700;
+    margin: 0 0 var(--sp-16);
+  }
+
+  section {
+    margin: var(--sp-48) 0;
+  }
+
+  section.section-block {
+    padding-top: var(--sp-32);
+    border-top: 1px solid var(--color-line-normal);
+  }
+
+  p { margin: 0 0 var(--sp-16); color: var(--color-label-neutral); }
+
+  .caption {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    letter-spacing: 0.0252em;
+    color: var(--color-label-alternative);
+  }
+
+  /* ---- filter bar ---- */
+  .filter-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(4px);
+    border-bottom: 1px solid var(--color-line-normal);
+    padding: var(--sp-16) 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-24);
+    align-items: flex-end;
+  }
+
+  .filter-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 180px;
+    flex: 1 1 200px;
+  }
+
+  .filter-item label {
+    font-size: 0.75rem;
+    color: var(--color-label-alternative);
+    font-weight: 600;
+  }
+
+  .filter-item .value {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--color-primary-strong);
+  }
+
+  input[type="range"] {
+    width: 100%;
+    accent-color: var(--color-primary-normal);
+  }
+
+  select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--color-line-normal);
+    background: var(--color-bg-normal);
+    color: var(--color-label-normal);
+    font-family: inherit;
+    font-size: 0.875rem;
+  }
+
+  .seg {
+    display: flex;
+    border: 1px solid var(--color-line-normal);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .seg button {
+    flex: 1;
+    border: none;
+    background: var(--color-bg-normal);
+    color: var(--color-label-neutral);
+    font-family: inherit;
+    font-size: 0.8125rem;
+    padding: 8px 4px;
+    cursor: pointer;
+    border-left: 1px solid var(--color-line-normal);
+  }
+  .seg button:first-child { border-left: none; }
+  .seg button[aria-pressed="true"] {
+    background: var(--color-primary-normal);
+    color: #fff;
+    font-weight: 700;
+  }
+
+  /* ---- KPI cards ---- */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--sp-16);
+  }
+
+  .kpi-card {
+    border: 1px solid var(--color-line-normal);
+    border-radius: var(--radius);
+    padding: var(--sp-16);
+    background: var(--color-bg-normal);
+  }
+
+  .kpi-label {
+    font-size: 0.75rem;
+    color: var(--color-label-alternative);
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+
+  .kpi-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-label-normal);
+    line-height: 1.3;
+  }
+
+  .kpi-sub {
+    font-size: 0.75rem;
+    color: var(--color-label-alternative);
+    margin-top: 4px;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 999px;
+    background: var(--blue-95);
+    color: var(--color-primary-strong);
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+
+  .up { color: var(--red-50); }
+  .down { color: var(--color-primary-normal); }
+  .good { color: var(--green-50); }
+  .bad { color: var(--red-50); }
+
+  /* ---- chart ---- */
+  .chart-wrap {
+    border: 1px solid var(--color-line-normal);
+    border-radius: var(--radius);
+    padding: var(--sp-16);
+    position: relative;
+  }
+  .chart-wrap svg { width: 100%; height: auto; display: block; }
+  .chart-legend {
+    display: flex;
+    gap: var(--sp-16);
+    flex-wrap: wrap;
+    font-size: 0.75rem;
+    color: var(--color-label-neutral);
+    margin-bottom: var(--sp-8);
+  }
+  .chart-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .legend-swatch { width: 14px; height: 3px; border-radius: 2px; display: inline-block; }
+  .tooltip {
+    position: absolute;
+    pointer-events: none;
+    background: var(--cn-10);
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 8px 10px;
+    border-radius: 8px;
+    line-height: 1.5;
+    opacity: 0;
+    transition: opacity 0.1s;
+    white-space: nowrap;
+    transform: translate(-50%, -110%);
+    z-index: 5;
+  }
+
+  /* ---- dong cards ---- */
+  .dong-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--sp-16);
+  }
+  .dong-card {
+    border: 1px solid var(--color-line-normal);
+    border-radius: var(--radius);
+    padding: var(--sp-16);
+  }
+  .dong-card.empty { opacity: 0.45; }
+  .dong-name { font-size: 1rem; font-weight: 700; margin-bottom: var(--sp-8); }
+  .dong-avg { font-size: 0.8125rem; color: var(--color-label-neutral); margin-bottom: var(--sp-12); }
+  .ratio-bar-track {
+    height: 8px;
+    border-radius: 4px;
+    background: var(--cn-97);
+    overflow: hidden;
+    margin-bottom: 6px;
+  }
+  .ratio-bar-fill {
+    height: 100%;
+    background: var(--color-primary-normal);
+    border-radius: 4px;
+  }
+  .dong-ratio-value { font-size: 1.125rem; font-weight: 700; color: var(--color-primary-strong); }
+  .dong-meta { font-size: 0.75rem; color: var(--color-label-alternative); margin-top: var(--sp-8); }
+
+  /* ---- table ---- */
+  .table-scroll {
+    overflow-x: auto;
+    border: 1px solid var(--color-line-normal);
+    border-radius: var(--radius);
+  }
+  table {
+    width: 100%;
+    min-width: 720px;
+    border-collapse: collapse;
+    background: var(--color-bg-normal);
+  }
+  th, td {
+    padding: var(--sp-12) var(--sp-16);
+    text-align: right;
+    border-bottom: 1px solid var(--color-line-alternative);
+    font-size: 0.8125rem;
+    letter-spacing: 0.0145em;
+    white-space: nowrap;
+  }
+  th:first-child, td:first-child { text-align: left; }
+  th {
+    background: var(--color-bg-alternative);
+    color: var(--color-label-normal);
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+  }
+  th button {
+    background: none;
+    border: none;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  td { color: var(--color-label-neutral); }
+  tbody tr:last-child td { border-bottom: none; }
+  tr.under-budget td { background: var(--blue-95); }
+  .rate-badge {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 999px;
+    background: var(--red-95);
+    color: var(--red-50);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    margin-left: 4px;
+  }
+  .empty-msg {
+    padding: var(--sp-32);
+    text-align: center;
+    color: var(--color-label-alternative);
+    font-size: 0.875rem;
+  }
+  .more-btn {
+    display: block;
+    width: 100%;
+    padding: var(--sp-12);
+    border: 1px solid var(--color-line-normal);
+    border-radius: var(--radius);
+    background: var(--color-bg-alternative);
+    color: var(--color-label-neutral);
+    font-family: inherit;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: var(--sp-12);
+  }
+
+  footer {
+    padding-top: var(--sp-32);
+    border-top: 1px solid var(--color-line-normal);
+    margin-top: var(--sp-48);
+  }
+  footer a { color: var(--color-primary-normal); }
+
+  @media (max-width: 700px) {
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .dong-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 420px) {
+    body { padding: 0 var(--sp-16) var(--sp-48); }
+    .kpi-grid { grid-template-columns: 1fr 1fr; gap: var(--sp-8); }
+    .kpi-value { font-size: 1.125rem; }
+    h1 { font-size: 1.5rem; line-height: 2rem; }
+    .filter-bar { gap: var(--sp-12); }
+    .filter-item { min-width: 140px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <h1>양천구 20평대, 8억으로 어디까지 가능한가</h1>
+  <p class="sub" id="periodSummary">2025.07–2026.06 실거래 9,837건 기준</p>
+</header>
+
+<div class="filter-bar" id="filterBar">
+  <div class="filter-item">
+    <label for="budgetRange">예산 <span class="value" id="budgetValue">8.0억</span></label>
+    <input type="range" id="budgetRange" min="20000" max="300000" step="5000" value="80000" aria-describedby="budgetValue">
+  </div>
+  <div class="filter-item">
+    <label id="areaLabel">면적 구간</label>
+    <div class="seg" role="group" aria-labelledby="areaLabel" id="areaSeg">
+      <button type="button" data-area="all">전체</button>
+      <button type="button" data-area="under60">&lt;60㎡</button>
+      <button type="button" data-area="60-85" aria-pressed="true">60–85㎡</button>
+      <button type="button" data-area="85plus">85㎡+</button>
+    </div>
+  </div>
+  <div class="filter-item">
+    <label for="dongSelect">동</label>
+    <select id="dongSelect">
+      <option value="all">전체</option>
+    </select>
+  </div>
+</div>
+
+<section id="kpiSection" class="section-block" aria-label="핵심 지표">
+  <h2>지금 이 조건이면</h2>
+  <div class="kpi-grid" id="kpiGrid"></div>
+</section>
+
+<section id="chartSection" class="section-block" aria-label="월별 추이">
+  <h2>월별 추이</h2>
+  <div class="chart-legend">
+    <span><i class="legend-swatch" style="background:var(--blue-50)"></i>매매 평균가</span>
+    <span><i class="legend-swatch" style="background:var(--cn-70); background-image:repeating-linear-gradient(90deg, var(--cn-70) 0 4px, transparent 4px 7px)"></i>전세 평균가</span>
+    <span><i class="legend-swatch" style="background:var(--cn-95); height:8px; border-radius:2px"></i>거래량(매매)</span>
+    <span><i class="legend-swatch" style="background:var(--red-50); background-image:repeating-linear-gradient(90deg, var(--red-50) 0 4px, transparent 4px 7px)"></i>내 예산 기준선</span>
+  </div>
+  <div class="chart-wrap" id="chartWrap">
+    <div id="chartContainer"></div>
+    <div class="tooltip" id="chartTooltip" role="status"></div>
+  </div>
+  <p class="sr-only" id="chartSummary"></p>
+</section>
+
+<section id="dongSection" class="section-block" aria-label="동별 비교">
+  <h2>동별 비교</h2>
+  <div class="dong-grid" id="dongGrid"></div>
+</section>
+
+<section id="tableSection" class="section-block" aria-label="단지 랭킹">
+  <h2>단지 랭킹</h2>
+  <p class="caption" id="tableSortCaption"></p>
+  <div class="table-scroll" id="tableScroll"></div>
+</section>
+
+<footer>
+  <p class="caption">
+    데이터: 서울열린데이터광장 서울시 부동산 실거래가 정보(OA-21275), 2025-07 ~ 2026-06 계약 기준 · 양천구 실거래 9,837건(매매 2,894 · 전세 6,943) · 월세 거래 및 좌표 정보는 대상에서 제외
+  </p>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  var RAW = null;
+  var salesAug = [];
+  var jeonseAug = [];
+  var TOTAL_COUNT = 0;
+
+  var TABLE_PAGE_SIZE = 20;
+  var tableExpanded = false;
+  var sortState = { col: "avgPrice", dir: "asc" };
+  var userHasSorted = false;
+
+  var filters = { budget: 80000, area: "60-85", dong: "all" };
+
+  var els = {};
+
+  function $(id) { return document.getElementById(id); }
+
+  function fmtEok(manwon, digits) {
+    if (manwon === null || manwon === undefined || isNaN(manwon)) return "–";
+    return (manwon / 10000).toFixed(digits === undefined ? 2 : digits) + "억";
+  }
+
+  function fmtCount(n) {
+    return n.toLocaleString("ko-KR") + "건";
+  }
+
+  function mean(arr) {
+    if (!arr.length) return null;
+    var s = 0;
+    for (var i = 0; i < arr.length; i++) s += arr[i];
+    return s / arr.length;
+  }
+
+  function areaMatch(area, bucket) {
+    if (bucket === "all") return true;
+    if (bucket === "under60") return area < 60;
+    if (bucket === "60-85") return area >= 60 && area < 85;
+    if (bucket === "85plus") return area >= 85;
+    return true;
+  }
+
+  function dongMatch(dongName, filterDong) {
+    return filterDong === "all" || dongName === filterDong;
+  }
+
+  function filterRows(rows, dong, areaBucket) {
+    var out = [];
+    for (var i = 0; i < rows.length; i++) {
+      var r = rows[i];
+      if (areaMatch(r.area, areaBucket) && dongMatch(r.dong, dong)) out.push(r);
+    }
+    return out;
+  }
+
+  // ---------------- URL hash sync ----------------
+
+  function areaBucketToHash(b) {
+    if (b === "under60") return "<60";
+    if (b === "85plus") return "85+";
+    return b;
+  }
+  function hashToAreaBucket(v) {
+    if (v === "<60") return "under60";
+    if (v === "85+") return "85plus";
+    if (v === "60-85" || v === "all") return v;
+    return "60-85";
+  }
+
+  function readHash() {
+    var h = location.hash.replace(/^#/, "");
+    if (!h) return;
+    var parts = h.split("&");
+    var map = {};
+    parts.forEach(function (p) {
+      var kv = p.split("=");
+      if (kv.length === 2) map[kv[0]] = decodeURIComponent(kv[1]);
+    });
+    if (map.budget && !isNaN(+map.budget)) filters.budget = +map.budget;
+    if (map.area) filters.area = hashToAreaBucket(map.area);
+    if (map.dong) filters.dong = map.dong;
+  }
+
+  var applyingHashState = false;
+
+  function writeHash(push) {
+    if (applyingHashState) return; // don't write while we're applying an external hash change
+    var h = "budget=" + filters.budget +
+      "&area=" + encodeURIComponent(areaBucketToHash(filters.area)) +
+      "&dong=" + encodeURIComponent(filters.dong);
+    var full = "#" + h;
+    if (full === location.hash) return;
+    if (push) {
+      history.pushState(null, "", full);
+    } else {
+      history.replaceState(null, "", full);
+    }
+  }
+
+  // ---------------- data load ----------------
+
+  function loadData() {
+    return fetch("data/yangcheon.json")
+      .then(function (res) {
+        if (!res.ok) throw new Error("data load failed: " + res.status);
+        return res.json();
+      })
+      .then(function (data) {
+        RAW = data;
+        salesAug = RAW.sales.map(function (row) {
+          var cx = row[0], m = row[1], area = row[2], floor = row[3], price = row[4];
+          var dongIdx = RAW.complexes[cx][0];
+          return { cx: cx, m: m, area: area, floor: floor, price: price, dong: RAW.dongs[dongIdx], name: RAW.complexes[cx][1] };
+        });
+        jeonseAug = RAW.jeonse.map(function (row) {
+          var cx = row[0], m = row[1], area = row[2], floor = row[3], deposit = row[4];
+          var dongIdx = RAW.complexes[cx][0];
+          return { cx: cx, m: m, area: area, floor: floor, deposit: deposit, dong: RAW.dongs[dongIdx], name: RAW.complexes[cx][1] };
+        });
+        TOTAL_COUNT = RAW.meta.counts.sale + RAW.meta.counts.jeonse;
+      });
+  }
+
+  // ---------------- KPI ----------------
+
+  function renderKPI() {
+    var rowsAreaDong = filterRows(salesAug, filters.dong, filters.area);
+    var denom = rowsAreaDong.length;
+    var entryRows = rowsAreaDong.filter(function (r) { return r.price <= filters.budget; });
+    var entryCount = entryRows.length;
+    var ratio = denom ? (entryCount / denom * 100) : null;
+
+    var avgConditioned = mean(entryRows.map(function (r) { return r.price; }));
+
+    var districtRows = filterRows(salesAug, "all", filters.area);
+    var avgDistrict = mean(districtRows.map(function (r) { return r.price; }));
+    var gap = avgDistrict === null ? null : (avgDistrict - filters.budget) / 10000;
+
+    var recentIdx = [9, 10, 11];
+    var prevIdx = [6, 7, 8];
+    var recentPrices = rowsAreaDong.filter(function (r) { return recentIdx.indexOf(r.m) >= 0; }).map(function (r) { return r.price; });
+    var prevPrices = rowsAreaDong.filter(function (r) { return prevIdx.indexOf(r.m) >= 0; }).map(function (r) { return r.price; });
+    var recentAvg = mean(recentPrices);
+    var prevAvg = mean(prevPrices);
+    var trendRate = (recentAvg !== null && prevAvg) ? ((recentAvg / prevAvg - 1) * 100) : null;
+
+    var html = "";
+
+    html += '<div class="kpi-card"><div class="kpi-label">진입 가능 거래</div>' +
+      '<div class="kpi-value">' + entryCount.toLocaleString("ko-KR") + '건</div>' +
+      '<div class="kpi-sub">' + (ratio === null ? '조건 내 거래 없음' : '<span class="badge">조건 내 ' + ratio.toFixed(1) + '%</span>') + '</div></div>';
+
+    html += '<div class="kpi-card"><div class="kpi-label">조건 평균가</div>' +
+      '<div class="kpi-value">' + (avgConditioned === null ? '–' : fmtEok(avgConditioned)) + '</div>' +
+      '<div class="kpi-sub">예산 이하 ' + entryCount.toLocaleString("ko-KR") + '건 기준</div></div>';
+
+    var gapClass = gap === null ? "" : (gap <= 0 ? "good" : "bad");
+    var gapText = gap === null ? "–" : (gap <= 0 ? "" : "+") + gap.toFixed(2) + "억";
+    html += '<div class="kpi-card"><div class="kpi-label">예산 갭 (구 평균 − 예산)</div>' +
+      '<div class="kpi-value ' + gapClass + '">' + gapText + '</div>' +
+      '<div class="kpi-sub">' + (gap === null ? '해당 면적 거래 없음' : (gap <= 0 ? '예산이 구 평균 이상' : '예산이 구 평균에 못 미침')) + '</div></div>';
+
+    var trendClass = trendRate === null ? "" : (trendRate > 0 ? "up" : (trendRate < 0 ? "down" : ""));
+    var arrow = trendRate === null ? "" : (trendRate > 0 ? "▲ " : (trendRate < 0 ? "▼ " : "· "));
+    html += '<div class="kpi-card"><div class="kpi-label">최근 3개월 추세</div>' +
+      '<div class="kpi-value ' + trendClass + '">' + (trendRate === null ? '–' : arrow + Math.abs(trendRate).toFixed(1) + '%') + '</div>' +
+      '<div class="kpi-sub">직전 3개월 대비</div></div>';
+
+    els.kpiGrid.innerHTML = html;
+  }
+
+  // ---------------- chart ----------------
+
+  function renderChart() {
+    var rows = filterRows(salesAug, filters.dong, filters.area);
+    var jrows = filterRows(jeonseAug, filters.dong, filters.area);
+    var months = RAW.months;
+
+    var monthly = months.map(function (label, idx) {
+      var saleM = rows.filter(function (r) { return r.m === idx; });
+      var jeonseM = jrows.filter(function (r) { return r.m === idx; });
+      var avgSale = mean(saleM.map(function (r) { return r.price; }));
+      var avgJeonse = mean(jeonseM.map(function (r) { return r.deposit; }));
+      return {
+        label: label,
+        avgSale: avgSale,
+        avgJeonse: avgJeonse,
+        saleCount: saleM.length,
+        jeonseCount: jeonseM.length
+      };
+    });
+
+    var anyData = monthly.some(function (m) { return m.avgSale !== null || m.avgJeonse !== null; });
+
+    if (!anyData) {
+      els.chartContainer.innerHTML = '<div class="empty-msg">조건에 맞는 거래가 없습니다</div>';
+      els.chartSummary.textContent = "선택한 조건에 해당하는 월별 거래가 없습니다.";
+      return;
+    }
+
+    var W = 720, H = 320;
+    var padL = 56, padR = 56, padT = 20, padB = 36;
+    var plotW = W - padL - padR;
+    var plotH = H - padT - padB;
+
+    var allPrices = [];
+    monthly.forEach(function (m) {
+      if (m.avgSale !== null) allPrices.push(m.avgSale);
+      if (m.avgJeonse !== null) allPrices.push(m.avgJeonse);
+    });
+    allPrices.push(filters.budget);
+    var maxPriceManwon = Math.max.apply(null, allPrices) * 1.15;
+    var minPriceManwon = 0;
+
+    var maxVol = Math.max.apply(null, monthly.map(function (m) { return m.saleCount; }).concat([1]));
+
+    function xForIdx(i) {
+      var step = plotW / months.length;
+      return padL + step * i + step / 2;
+    }
+    function yForPrice(p) {
+      return padT + plotH - (p - minPriceManwon) / (maxPriceManwon - minPriceManwon) * plotH;
+    }
+    function hForVol(v) {
+      return (v / maxVol) * plotH * 0.9;
+    }
+
+    var barW = (plotW / months.length) * 0.5;
+
+    var svgParts = [];
+    svgParts.push('<svg viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-labelledby="chartTitle chartDesc" preserveAspectRatio="xMidYMid meet">');
+    svgParts.push('<title id="chartTitle">양천구 월별 매매·전세 평균가 및 거래량 추이</title>');
+    svgParts.push('<desc id="chartDesc">2025년 7월부터 2026년 6월까지 선택 조건의 월별 매매 평균가, 전세 평균가, 거래량을 보여주는 차트</desc>');
+
+    // gridlines + y axis labels (left, price)
+    var gridCount = 4;
+    for (var g = 0; g <= gridCount; g++) {
+      var val = maxPriceManwon * g / gridCount;
+      var y = yForPrice(val);
+      svgParts.push('<line x1="' + padL + '" y1="' + y + '" x2="' + (W - padR) + '" y2="' + y + '" stroke="var(--cn-97)" stroke-width="1"/>');
+      svgParts.push('<text x="' + (padL - 8) + '" y="' + (y + 4) + '" text-anchor="end" font-size="10" fill="var(--cn-70)">' + (val / 10000).toFixed(1) + '</text>');
+    }
+
+    // volume bars
+    monthly.forEach(function (m, i) {
+      if (!m.saleCount) return;
+      var x = xForIdx(i) - barW / 2;
+      var h = hForVol(m.saleCount);
+      var y = padT + plotH - h;
+      svgParts.push('<rect x="' + x + '" y="' + y + '" width="' + barW + '" height="' + h + '" fill="var(--cn-97)" data-idx="' + i + '"></rect>');
+    });
+
+    // budget reference line
+    if (filters.budget <= maxPriceManwon) {
+      var by = yForPrice(filters.budget);
+      svgParts.push('<line x1="' + padL + '" y1="' + by + '" x2="' + (W - padR) + '" y2="' + by + '" stroke="var(--red-50)" stroke-width="1.5" stroke-dasharray="5 4"/>');
+      svgParts.push('<text x="' + (W - padR) + '" y="' + (by - 6) + '" text-anchor="end" font-size="10" font-weight="700" fill="var(--red-50)">내 예산 ' + (filters.budget / 10000).toFixed(1) + '억</text>');
+    }
+
+    // sale line (solid)
+    var salePts = [];
+    monthly.forEach(function (m, i) {
+      if (m.avgSale !== null) salePts.push([xForIdx(i), yForPrice(m.avgSale)]);
+    });
+    if (salePts.length > 1) {
+      svgParts.push('<polyline points="' + salePts.map(function (p) { return p[0] + "," + p[1]; }).join(" ") + '" fill="none" stroke="var(--blue-50)" stroke-width="2.5"/>');
+    }
+    salePts.forEach(function (p) {
+      svgParts.push('<circle cx="' + p[0] + '" cy="' + p[1] + '" r="3" fill="var(--blue-50)"/>');
+    });
+
+    // jeonse line (dashed)
+    var jeonsePts = [];
+    monthly.forEach(function (m, i) {
+      if (m.avgJeonse !== null) jeonsePts.push([xForIdx(i), yForPrice(m.avgJeonse)]);
+    });
+    if (jeonsePts.length > 1) {
+      svgParts.push('<polyline points="' + jeonsePts.map(function (p) { return p[0] + "," + p[1]; }).join(" ") + '" fill="none" stroke="var(--cn-70)" stroke-width="2" stroke-dasharray="6 4"/>');
+    }
+    jeonsePts.forEach(function (p) {
+      svgParts.push('<circle cx="' + p[0] + '" cy="' + p[1] + '" r="2.5" fill="var(--cn-70)"/>');
+    });
+
+    // x axis labels
+    monthly.forEach(function (m, i) {
+      if (i % 2 !== 0 && months.length > 8) return;
+      svgParts.push('<text x="' + xForIdx(i) + '" y="' + (H - padB + 16) + '" text-anchor="middle" font-size="9" fill="var(--cn-70)">' + m.label.slice(2) + '</text>');
+    });
+
+    // hover targets
+    monthly.forEach(function (m, i) {
+      var step = plotW / months.length;
+      var x = padL + step * i;
+      svgParts.push('<rect class="hover-target" data-idx="' + i + '" x="' + x + '" y="' + padT + '" width="' + step + '" height="' + plotH + '" fill="transparent"/>');
+    });
+
+    svgParts.push('</svg>');
+    els.chartContainer.innerHTML = svgParts.join("");
+
+    // hover interactions
+    var svgEl = els.chartContainer.querySelector("svg");
+    var targets = svgEl.querySelectorAll(".hover-target");
+    targets.forEach(function (t) {
+      t.addEventListener("mousemove", function (evt) {
+        showTooltip(evt, monthly[+t.getAttribute("data-idx")]);
+      });
+      t.addEventListener("mouseleave", hideTooltip);
+      t.addEventListener("touchstart", function (evt) {
+        showTooltip(evt.touches[0], monthly[+t.getAttribute("data-idx")]);
+      }, { passive: true });
+    });
+
+    // sr summary
+    var withData = monthly.filter(function (m) { return m.avgSale !== null; });
+    var summaryText = "";
+    if (withData.length) {
+      var first = withData[0], last = withData[withData.length - 1];
+      var maxM = withData.reduce(function (a, b) { return (b.avgSale > a.avgSale ? b : a); });
+      summaryText = "선택 조건의 매매 평균가는 " + first.label + " " + fmtEok(first.avgSale) +
+        "에서 " + last.label + " " + fmtEok(last.avgSale) + "로 변화했으며, " +
+        maxM.label + "에 최고점 " + fmtEok(maxM.avgSale) + "을 기록했습니다.";
+    }
+    els.chartSummary.textContent = summaryText;
+  }
+
+  function showTooltip(evt, m) {
+    var tip = els.chartTooltip;
+    var wrapRect = els.chartWrap.getBoundingClientRect();
+    var x = evt.clientX - wrapRect.left;
+    var y = evt.clientY - wrapRect.top;
+    tip.style.left = x + "px";
+    tip.style.top = y + "px";
+    tip.style.opacity = "1";
+    tip.innerHTML = "<strong>" + m.label + "</strong><br>" +
+      "매매 평균 " + (m.avgSale === null ? "–" : fmtEok(m.avgSale)) + "<br>" +
+      "전세 평균 " + (m.avgJeonse === null ? "–" : fmtEok(m.avgJeonse)) + "<br>" +
+      "거래건수 " + m.saleCount.toLocaleString("ko-KR") + "건(매매) · " + m.jeonseCount.toLocaleString("ko-KR") + "건(전세)";
+  }
+  function hideTooltip() {
+    els.chartTooltip.style.opacity = "0";
+  }
+
+  // ---------------- dong cards ----------------
+
+  function jeonseRatioForRows(saleRows, jeonseRows) {
+    if (saleRows.length < 2 || jeonseRows.length < 2) return null;
+    var avgSale = mean(saleRows.map(function (r) { return r.price; }));
+    var avgJeonse = mean(jeonseRows.map(function (r) { return r.deposit; }));
+    if (!avgSale) return null;
+    return avgJeonse / avgSale * 100;
+  }
+
+  function renderDongCards() {
+    var dongList = RAW.dongs.slice();
+    var cards = dongList.map(function (dongName) {
+      var rows = filterRows(salesAug, dongName, filters.area);
+      var jrows = filterRows(jeonseAug, dongName, filters.area);
+      var total = rows.length;
+      var entryRows = rows.filter(function (r) { return r.price <= filters.budget; });
+      var entryCount = entryRows.length;
+      var ratio = total ? (entryCount / total * 100) : 0;
+      var avgPrice = mean(rows.map(function (r) { return r.price; }));
+
+      // average jeonse ratio across complexes in this dong meeting >=2/>=2 rule
+      var byCx = {};
+      rows.forEach(function (r) { (byCx[r.cx] = byCx[r.cx] || []).push(r); });
+      var jByCx = {};
+      jrows.forEach(function (r) { (jByCx[r.cx] = jByCx[r.cx] || []).push(r); });
+      var ratios = [];
+      Object.keys(byCx).forEach(function (cx) {
+        var rr = jeonseRatioForRows(byCx[cx], jByCx[cx] || []);
+        if (rr !== null) ratios.push(rr);
+      });
+      var avgJeonseRatio = ratios.length ? mean(ratios) : null;
+
+      return {
+        dong: dongName,
+        total: total,
+        entryCount: entryCount,
+        ratio: ratio,
+        avgPrice: avgPrice,
+        avgJeonseRatio: avgJeonseRatio
+      };
+    });
+
+    cards.sort(function (a, b) { return b.ratio - a.ratio; });
+
+    var html = cards.map(function (c) {
+      var empty = c.total === 0;
+      return '<div class="dong-card' + (empty ? ' empty' : '') + '">' +
+        '<div class="dong-name">' + c.dong + '</div>' +
+        '<div class="dong-avg">20평대 평균 ' + (c.avgPrice === null ? '–' : fmtEok(c.avgPrice)) + '</div>' +
+        '<div class="ratio-bar-track"><div class="ratio-bar-fill" style="width:' + c.ratio.toFixed(1) + '%"></div></div>' +
+        '<div class="dong-ratio-value">' + c.ratio.toFixed(1) + '%</div>' +
+        '<div class="kpi-sub">진입 가능 비율 (' + c.entryCount.toLocaleString("ko-KR") + '/' + c.total.toLocaleString("ko-KR") + '건)</div>' +
+        '<div class="dong-meta">평균 전세가율 ' + (c.avgJeonseRatio === null ? '–' : c.avgJeonseRatio.toFixed(1) + '%') + '</div>' +
+        '</div>';
+    }).join("");
+
+    els.dongGrid.innerHTML = html;
+  }
+
+  // ---------------- table ----------------
+
+  var TABLE_COLS = [
+    { key: "name", label: "단지" },
+    { key: "count", label: "거래" },
+    { key: "avgPrice", label: "평균 매매가" },
+    { key: "minPrice", label: "최저가" },
+    { key: "pyeongPrice", label: "평당가" },
+    { key: "avgJeonse", label: "평균 전세가" },
+    { key: "jeonseRatio", label: "전세가율" },
+    { key: "moveInCash", label: "실입주자금" }
+  ];
+
+  function buildTableRows() {
+    var rows = filterRows(salesAug, filters.dong, filters.area);
+    var jrows = filterRows(jeonseAug, filters.dong, filters.area);
+
+    var byCx = {};
+    rows.forEach(function (r) { (byCx[r.cx] = byCx[r.cx] || []).push(r); });
+    var jByCx = {};
+    jrows.forEach(function (r) { (jByCx[r.cx] = jByCx[r.cx] || []).push(r); });
+
+    var out = [];
+    Object.keys(byCx).forEach(function (cxKey) {
+      var cx = +cxKey;
+      var saleRows = byCx[cx];
+      if (saleRows.length < 2) return;
+      var jeonseRows = jByCx[cx] || [];
+
+      var avgPrice = mean(saleRows.map(function (r) { return r.price; }));
+      var minPrice = Math.min.apply(null, saleRows.map(function (r) { return r.price; }));
+      var avgArea = mean(saleRows.map(function (r) { return r.area; }));
+      var pyeongPrice = Math.round(avgPrice / (avgArea / 3.3058));
+
+      var jeonseAvailable = saleRows.length >= 2 && jeonseRows.length >= 2;
+      var avgJeonse = jeonseAvailable ? mean(jeonseRows.map(function (r) { return r.deposit; })) : null;
+      var jeonseRatio = jeonseAvailable ? (avgJeonse / avgPrice * 100) : null;
+      var moveInCash = avgJeonse !== null ? (avgPrice - avgJeonse) : null;
+
+      out.push({
+        cx: cx,
+        dong: saleRows[0].dong,
+        name: saleRows[0].name,
+        count: saleRows.length,
+        avgPrice: avgPrice,
+        minPrice: minPrice,
+        pyeongPrice: pyeongPrice,
+        avgJeonse: avgJeonse,
+        jeonseRatio: jeonseRatio,
+        moveInCash: moveInCash,
+        underBudget: avgPrice <= filters.budget
+      });
+    });
+    return out;
+  }
+
+  function renderTable() {
+    var rows = buildTableRows();
+
+    if (els.tableSortCaption) {
+      els.tableSortCaption.textContent = userHasSorted ?
+        "" :
+        "기본 정렬: 예산(" + (filters.budget / 10000).toFixed(1) + "억) 충족 여부와 거래량이 많은 순";
+    }
+
+    if (!rows.length) {
+      els.tableScroll.innerHTML = '<div class="empty-msg">조건에 맞는 거래가 없습니다</div>';
+      return;
+    }
+
+    if (userHasSorted) {
+      rows.sort(function (a, b) {
+        var av = a[sortState.col], bv = b[sortState.col];
+        var an = (av === null || av === undefined);
+        var bn = (bv === null || bv === undefined);
+        if (an && bn) return 0;
+        if (an) return 1;
+        if (bn) return -1;
+        if (typeof av === "string") {
+          return sortState.dir === "asc" ? av.localeCompare(bv, "ko") : bv.localeCompare(av, "ko");
+        }
+        return sortState.dir === "asc" ? av - bv : bv - av;
+      });
+    } else {
+      // Default: budget-eligible complexes first, then by transaction count desc.
+      rows.sort(function (a, b) {
+        if (a.underBudget !== b.underBudget) return a.underBudget ? -1 : 1;
+        return b.count - a.count;
+      });
+    }
+
+    var visibleRows = tableExpanded ? rows : rows.slice(0, TABLE_PAGE_SIZE);
+
+    var thead = "<thead><tr>" + TABLE_COLS.map(function (c) {
+      var active = userHasSorted && sortState.col === c.key;
+      var arrow = active ? (sortState.dir === "asc" ? " ▲" : " ▼") : "";
+      var ariaSort = active ? (sortState.dir === "asc" ? "ascending" : "descending") : "none";
+      return '<th scope="col" aria-sort="' + ariaSort + '"><button type="button" data-sort="' + c.key + '">' + c.label + arrow + '</button></th>';
+    }).join("") + "</tr></thead>";
+
+    var tbody = "<tbody>" + visibleRows.map(function (r) {
+      var ratioCell = r.jeonseRatio === null ? "–" : r.jeonseRatio.toFixed(1) + "%" + (r.jeonseRatio >= 70 ? '<span class="rate-badge">70%+</span>' : "");
+      return '<tr class="' + (r.underBudget ? "under-budget" : "") + '">' +
+        "<td>" + r.dong + " " + r.name + "</td>" +
+        "<td>" + fmtCount(r.count) + "</td>" +
+        "<td>" + fmtEok(r.avgPrice) + "</td>" +
+        "<td>" + fmtEok(r.minPrice) + "</td>" +
+        "<td>" + r.pyeongPrice.toLocaleString("ko-KR") + "만원</td>" +
+        "<td>" + (r.avgJeonse === null ? "–" : fmtEok(r.avgJeonse)) + "</td>" +
+        "<td>" + ratioCell + "</td>" +
+        "<td>" + fmtEok(r.moveInCash) + "</td>" +
+        "</tr>";
+    }).join("") + "</tbody>";
+
+    var caption = '<caption class="sr-only">필터 조건을 만족하는 단지별 매매·전세 통계, 예산 이하 단지는 배경으로 강조</caption>';
+
+    els.tableScroll.innerHTML = "<table>" + caption + thead + tbody + "</table>" +
+      (rows.length > TABLE_PAGE_SIZE && !tableExpanded ?
+        '<button type="button" class="more-btn" id="moreBtn">더 보기 (' + (rows.length - TABLE_PAGE_SIZE) + '건 더)</button>' : "");
+
+    var moreBtn = $("moreBtn");
+    if (moreBtn) {
+      moreBtn.addEventListener("click", function () {
+        tableExpanded = true;
+        renderTable();
+      });
+    }
+
+    els.tableScroll.querySelectorAll("button[data-sort]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var col = btn.getAttribute("data-sort");
+        if (userHasSorted && sortState.col === col) {
+          sortState.dir = sortState.dir === "asc" ? "desc" : "asc";
+        } else {
+          sortState.col = col;
+          sortState.dir = col === "name" ? "asc" : "asc";
+        }
+        userHasSorted = true;
+        renderTable();
+      });
+    });
+  }
+
+  // ---------------- render orchestration ----------------
+
+  function renderAll(pushHash) {
+    renderKPI();
+    renderChart();
+    renderDongCards();
+    tableExpanded = false;
+    renderTable();
+    writeHash(!!pushHash);
+  }
+
+  var pendingRaf = null;
+  function scheduleRender() {
+    if (pendingRaf) cancelAnimationFrame(pendingRaf);
+    pendingRaf = requestAnimationFrame(function () {
+      pendingRaf = null;
+      renderAll();
+    });
+  }
+
+  // ---------------- filter UI wiring ----------------
+
+  function syncControlsFromFilters() {
+    els.budgetRange.value = filters.budget;
+    els.budgetValue.textContent = (filters.budget / 10000).toFixed(1) + "억";
+    els.dongSelect.value = filters.dong;
+    els.areaSeg.querySelectorAll("button").forEach(function (btn) {
+      btn.setAttribute("aria-pressed", btn.getAttribute("data-area") === filters.area ? "true" : "false");
+    });
+  }
+
+  function initFilterUI() {
+    els.dongSelect.innerHTML = '<option value="all">전체</option>' +
+      RAW.dongs.map(function (d) { return '<option value="' + d + '">' + d + '</option>'; }).join("");
+
+    syncControlsFromFilters();
+
+    els.budgetRange.addEventListener("input", function () {
+      filters.budget = +els.budgetRange.value;
+      els.budgetValue.textContent = (filters.budget / 10000).toFixed(1) + "억";
+      scheduleRender();
+    });
+
+    els.dongSelect.addEventListener("change", function () {
+      filters.dong = els.dongSelect.value;
+      renderAll(true);
+    });
+
+    els.areaSeg.addEventListener("click", function (evt) {
+      var btn = evt.target.closest("button[data-area]");
+      if (!btn) return;
+      filters.area = btn.getAttribute("data-area");
+      els.areaSeg.querySelectorAll("button").forEach(function (b) {
+        b.setAttribute("aria-pressed", b === btn ? "true" : "false");
+      });
+      renderAll(true);
+    });
+
+    window.addEventListener("hashchange", function () {
+      applyingHashState = true;
+      readHash();
+      syncControlsFromFilters();
+      renderAll();
+      applyingHashState = false;
+    });
+  }
+
+  // ---------------- init ----------------
+
+  function cacheEls() {
+    els.kpiGrid = $("kpiGrid");
+    els.chartContainer = $("chartContainer");
+    els.chartWrap = $("chartWrap");
+    els.chartTooltip = $("chartTooltip");
+    els.chartSummary = $("chartSummary");
+    els.dongGrid = $("dongGrid");
+    els.tableScroll = $("tableScroll");
+    els.tableSortCaption = $("tableSortCaption");
+    els.budgetRange = $("budgetRange");
+    els.budgetValue = $("budgetValue");
+    els.areaSeg = $("areaSeg");
+    els.dongSelect = $("dongSelect");
+  }
+
+  function init() {
+    cacheEls();
+    readHash();
+    loadData().then(function () {
+      var periodEl = $("periodSummary");
+      periodEl.textContent = RAW.meta.period.from + " – " + RAW.meta.period.to + " 실거래 " +
+        (RAW.meta.counts.sale + RAW.meta.counts.jeonse).toLocaleString("ko-KR") + "건 기준 (매매 " +
+        RAW.meta.counts.sale.toLocaleString("ko-KR") + " · 전세 " + RAW.meta.counts.jeonse.toLocaleString("ko-KR") + ")";
+      initFilterUI();
+      renderAll();
+    }).catch(function (err) {
+      els.kpiGrid.innerHTML = '<div class="empty-msg">데이터를 불러오지 못했습니다: ' + err.message + '</div>';
+      console.error(err);
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", init);
+})();
+</script>
+</body>
+</html>
