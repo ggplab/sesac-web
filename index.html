@@ -2,39 +2,153 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>임정 소개</title>
 <style>
+  @font-face {
+    font-family: "Pretendard";
+    src: url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/woff2/PretendardVariable.woff2") format("woff2-variations");
+    font-weight: 400 700;
+  }
+
+  /* ---- Montage(@wanteddev/wds-theme) design tokens ---- */
+  :root {
+    /* atomic/blue */
+    --blue-40: #0054D1;
+    --blue-45: #005EEB;
+    --blue-50: #0066FF;
+    --blue-90: #C9DEFE;
+    --blue-95: #EAF2FE;
+
+    /* atomic/coolNeutral */
+    --cn-10: #171719;
+    --cn-25: #37383C;
+    --cn-50: #70737C;
+    --cn-70: #989BA2;
+    --cn-90: #C2C4C8;
+    --cn-95: #DBDCDF;
+    --cn-97: #EAEBEC;
+    --cn-99: #F7F7F8;
+
+    /* atomic/common */
+    --common-0: #000000;
+    --common-100: #ffffff;
+
+    /* semantic (light) */
+    --color-primary-normal: var(--blue-50);
+    --color-primary-strong: var(--blue-45);
+    --color-label-normal: var(--cn-10);
+    --color-label-neutral: #4b4c50;
+    --color-label-alternative: #7d7e84;
+    --color-bg-normal: var(--common-100);
+    --color-bg-alternative: var(--cn-99);
+    --color-line-normal: var(--cn-95);
+    --color-line-alternative: var(--cn-97);
+
+    /* spacing */
+    --sp-8: 8px;
+    --sp-12: 12px;
+    --sp-16: 16px;
+    --sp-24: 24px;
+    --sp-32: 32px;
+    --sp-48: 48px;
+    --sp-64: 64px;
+
+    --radius: 12px;
+  }
+
+  * { box-sizing: border-box; }
+
   body {
-    font-family: -apple-system, "Malgun Gothic", sans-serif;
-    max-width: 700px;
-    margin: 60px auto;
-    padding: 0 20px;
-    color: #932323;
+    font-family: "Pretendard", -apple-system, "Malgun Gothic", sans-serif;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: var(--sp-64) var(--sp-24);
+    color: var(--color-label-normal);
+    background: var(--color-bg-normal);
     line-height: 1.6;
   }
+
+  /* Typography scale (Montage: title1 / headline1 / body1 / caption1) */
   h1 {
-    font-size: 3.0em;
-    margin-bottom: 10px;
+    font-size: 2rem;       /* title1 */
+    line-height: 2.75rem;
+    letter-spacing: -0.0253em;
+    font-weight: 700;
+    margin: 0 0 var(--sp-12);
   }
+
+  h2 {
+    font-size: 1.375rem;   /* heading1 */
+    line-height: 1.875rem;
+    letter-spacing: -0.0194em;
+    font-weight: 700;
+    margin: var(--sp-64) 0 var(--sp-12);
+    padding-top: var(--sp-32);
+    border-top: 1px solid var(--color-line-normal);
+  }
+
   p {
-    font-size: 1.1em;
+    font-size: 1rem;       /* body1 */
+    line-height: 1.625rem;
+    letter-spacing: 0.0057em;
+    color: var(--color-label-neutral);
+    margin: 0 0 var(--sp-24);
   }
+
+  .caption {
+    font-size: 0.75rem;    /* caption1 */
+    line-height: 1rem;
+    letter-spacing: 0.0252em;
+    color: var(--color-label-alternative);
+    margin-top: var(--sp-12);
+  }
+
   table {
-    border-collapse: collapse;
     width: 100%;
-    margin-top: 30px;
+    border-collapse: collapse;
+    background: var(--color-bg-normal);
+    border: 1px solid var(--color-line-normal);
+    border-radius: var(--radius);
+    overflow: hidden;
   }
+
   th, td {
-    border: 1px solid #11da6e;
-    padding: 10px 14px;
+    padding: var(--sp-12) var(--sp-16);
     text-align: left;
+    border-bottom: 1px solid var(--color-line-alternative);
+    font-size: 0.875rem;   /* label1 */
+    letter-spacing: 0.0145em;
   }
+
   th {
-    background-color: #152ae6;
+    background: var(--color-bg-alternative);
+    color: var(--color-label-normal);
+    font-weight: 600;
+  }
+
+  td {
+    color: var(--color-label-neutral);
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: var(--blue-95);
+    color: var(--color-primary-strong);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    margin-bottom: var(--sp-16);
   }
 </style>
 </head>
 <body>
+  <span class="badge">Profile</span>
   <h1>임정</h1>
   <p>
     안녕하세요, 임정입니다. 새로운 것을 배우고 만드는 것을 좋아합니다.
@@ -117,7 +231,7 @@
       <td>410,000</td>
     </tr>
   </table>
-  <p style="font-size: 0.85em; color: #666; margin-top: 10px;">
+  <p class="caption">
     데이터: 서울열린데이터광장 서울시 부동산 실거래가 정보(OA-21275), 2026년 상반기 아파트 계약 기준
   </p>
 </body>
